@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Sign Up</title>
+<!--    <link rel="stylesheet" th:href="@{/resources/CSS/signup.css}">-->
+</head>
+<body>
+
+<!--username, password (will be hashed using BCrypt), firstName, lastName, dateOfBirth, bio-->
+<!--<div class="login-box">-->
+<h2>SignUp</h2>
+<form action="/signup" method="POST">
+
+    <div class="user-box">
+    <label for="firstName">First Name</label>
+    <input type="text" name="firstName">
+    </div>
+
+    <div class="user-box">
+    <label for="lastName">Last Name</label>
+    <input type="text" name="lastName">
+    </div>
+
+    <label for="username">UserName</label>
+    <input type="text" name="username">
+
+
+    <label for="password">Password</label>
+    <input type="text" name="password" placeholder="Repeat Password" required>
+
+    <label for="dateOfBirth">Date Of Birth</label>
+    <input type="date" name="dateOfBirth">
+<!--    pattern="yyyy-MM-dd"-->
+<br>
+    <label for="bio">Bio</label>
+    <input type="text" name="bio">
+
+<!--        <hr>-->
+<!--        <p>By creating an account you agree to our <a href="#">Terms & Privacy</a>.</p>-->
+
+        <button type="submit" class="registerbtn">Register</button>
+<!--    </div>-->
+
+
+<!--    <div class="container signin">-->
+<!--        <p>Already have an account? <a href="/login">Sign in</a>.</p>-->
+<!--    </div>-->
+
+    <p>Already have an account?
+    <a href="/login">
+        Login
+    </a>
+    </p>
+<!--    <a href="/login">-->
+<!--        <span></span>-->
+<!--        <span></span>-->
+<!--        <span></span>-->
+<!--        <span></span>-->
+<!--        Submit-->
+<!--    </a>-->
+</form>
+</div>
+</body>
+</html>
