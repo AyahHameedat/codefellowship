@@ -4,61 +4,69 @@
     <meta charset="UTF-8">
     <title>Sign Up</title>
 <!--    <link rel="stylesheet" th:href="@{/resources/CSS/signup.css}">-->
+    <link rel="stylesheet" th:href="@{/css/login.css}">
+
 </head>
 <body>
 
 <!--username, password (will be hashed using BCrypt), firstName, lastName, dateOfBirth, bio-->
 <!--<div class="login-box">-->
-<h2>SignUp</h2>
+<div class="login-box">
+<h2> Sign Up </h2>
 <form action="/signup" method="POST">
 
     <div class="user-box">
-    <label for="firstName">First Name</label>
-    <input type="text" name="firstName">
+        <input type="text" name="firstName">
+        <label for="firstName">First Name</label>
     </div>
 
     <div class="user-box">
-    <label for="lastName">Last Name</label>
-    <input type="text" name="lastName">
+        <input type="text" name="lastName">
+        <label for="lastName">Last Name</label>
     </div>
 
-    <label for="username">UserName</label>
-    <input type="text" name="username">
+    <div class="user-box">
+        <input type="text" name="username">
+        <label for="username">UserName</label>
+    </div>
 
+    <div class="user-box">
+        <input type="password" name="password" required>
+        <label for="password">Password</label>
+    </div>
 
-    <label for="password">Password</label>
-    <input type="text" name="password" placeholder="Repeat Password" required>
-
-    <label for="dateOfBirth">Date Of Birth</label>
-    <input type="date" name="dateOfBirth">
+    <div class="user-box">
+        <input type="date" name="dateOfBirth">
+        <label for="dateOfBirth">Date Of Birth</label>
+    </div>
 <!--    pattern="yyyy-MM-dd"-->
-<br>
-    <label for="bio">Bio</label>
-    <input type="text" name="bio">
+    <div class="user-box">
+        <input type="text" name="bio">
+        <label for="bio">Bio</label>
+    </div>
 
-<!--        <hr>-->
+<!--    <br>-->
+<!--    <br>-->
 <!--        <p>By creating an account you agree to our <a href="#">Terms & Privacy</a>.</p>-->
 
         <button type="submit" class="registerbtn">Register</button>
-<!--    </div>-->
 
 
-<!--    <div class="container signin">-->
-<!--        <p>Already have an account? <a href="/login">Sign in</a>.</p>-->
-<!--    </div>-->
-
-    <p>Already have an account?
+<!--    <p>Already have an account?</p>-->
+    <br>
+    <br>
+    <div class="user-box">
+        <label color="#ffffff">Already have an account?</label>
+    </div>
     <a href="/login">
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
         Login
     </a>
-    </p>
-<!--    <a href="/login">-->
-<!--        <span></span>-->
-<!--        <span></span>-->
-<!--        <span></span>-->
-<!--        <span></span>-->
-<!--        Submit-->
-<!--    </a>-->
+
+
 </form>
 </div>
 </body>
