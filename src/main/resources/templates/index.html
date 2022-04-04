@@ -3,18 +3,60 @@
 <head>
     <meta charset="UTF-8">
     <title>Home Page</title>
+    <link rel="stylesheet" th:href="@{/css/login.css}">
+
 </head>
 <body>
 
-<h1>Hello From Great AYA, Application User for you!</h1>
+<h2>Hello From Great AYA, Application User for you!</h2>
 <!--  <div th:text = "${username}"></div>-->
-<!--<div th:text="'Your username is: ' + ${username}"></div>-->
 
-<a href="/login">Login</a>
-<a href="/signup">Register</a>
-<a href="/logout">Logout</a>
+<span th:text="${username}"></span>
+<div class="user-box"><span th:text="${username}"></span>
+</div>
+
+<div class="login-box">
+    <form action="/login" method="GET">
+
+        <span th:text="${username}"></span>
+        <div class="user-box"><span th:text="${username}"></span>
+            AYA
+        </div>
+<br>
+<br>
+
+<a href="/login">
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    Login
+</a>
+
+<br>
+<br>
+
+    <a href="/signup">
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        Register
+    </a>
+
+<br>
+<br>
+
+    <a href="/logout">
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        Logout
+    </a>
 
 
-
+    </form>
+</div>
 </body>
 </html>
