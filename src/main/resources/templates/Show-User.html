@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+  <meta charset="UTF-8">
+  <title>Home Page</title>
+  <link rel="stylesheet" th:href="@{/css/login.css}">
+
+</head>
+<body>
+
+<div class="topnav">
+  <nav style="background-color: white">
+
+    <a href="/">
+      Home
+    </a>
+
+  <a href="/login">
+    Login
+  </a>
+
+  <a href="/signup">
+    Register
+  </a>
+
+  <a href="/logout">
+    Logout
+  </a>
+  <!--    </div>-->
+</nav>
+</div>
+
+
+
+<div class="card">
+  <div class="box-card">
+      <img src="../static/images/test.png" width="50%" th:src="@{images/test.png}"/>
+    <div class="container">
+      <h2 th:text = "${username}"></h2>
+      <h2 th:text="${firsName} +' '+${lastName}"></h2>
+      <h2 th:text="${dateOfBirth}"></h2>
+      <h2 th:text="${bio}"></h2>
+
+
+    </div>
+  </div>
+</div>
+
+
+
+</body>
+</html>

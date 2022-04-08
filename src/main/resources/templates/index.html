@@ -8,53 +8,99 @@
 </head>
 <body>
 
-<h2>Hello From Great AYA, Application User for you!</h2>
-<!--  <div th:text = "${username}"></div>-->
+<div class="topnav">
+<nav style="background-color: white">
+<!--    <div class="login-box">-->
+    <a href="/myprofile">
+        profile
+    </a>
 
-<span th:text="${username}"></span>
-<div class="user-box"><span th:text="${username}"></span>
+    <a href="/login">
+        Login
+    </a>
+
+    <a href="/feed">
+        Posts
+    </a>
+
+    <a href="/users">
+        Users
+    </a>
+
+    <a href="/signup">
+        Register
+    </a>
+
+    <a href="/logout">
+        Logout
+    </a>
+</nav>
 </div>
+
 
 <div class="login-box">
     <form action="/login" method="GET">
 
-        <span th:text="${username}"></span>
-        <div class="user-box"><span th:text="${username}"></span>
-            AYA
+<!--        <div class="user-box">-->
+<!--            <img src="../static/images/test.png" width="250" th:src="@{images/test.png}"/><h2 th:text="'Hello '+ ${username} + '!'"></h2>-->
+<!--        </div>-->
+
+        <div class="card">
+            <img src="../static/images/test.png" width="250%" th:src="@{images/test.png}"/>
+            <div class="container">
+                <h2 th:text="'Hello '+${username} + ' ^_^'"></h2>
+            </div>
         </div>
-<br>
-<br>
 
-<a href="/login">
-    <span></span>
-    <span></span>
-    <span></span>
-    <span></span>
-    Login
-</a>
 
-<br>
-<br>
+<!--        -->
+<!--        <div class="user-box"><h2 th:text="'Hello '+ ${username} + '!'">-->
+<!--        </h2></div>-->
 
-    <a href="/signup">
-        <span></span>
-        <span></span>
-        <span></span>
-        <span></span>
-        Register
-    </a>
 
-<br>
-<br>
 
-    <a href="/logout">
-        <span></span>
-        <span></span>
-        <span></span>
-        <span></span>
-        Logout
-    </a>
+<!--<br>-->
+<!--<br>-->
 
+<!--<a href="/login">-->
+<!--    <span></span>-->
+<!--    <span></span>-->
+<!--    <span></span>-->
+<!--    <span></span>-->
+<!--    Login-->
+<!--</a>-->
+
+<!--<br>-->
+<!--<br>-->
+
+<!--    <a href="/signup">-->
+<!--        <span></span>-->
+<!--        <span></span>-->
+<!--        <span></span>-->
+<!--        <span></span>-->
+<!--        Register-->
+<!--    </a>-->
+
+<!--<br>-->
+<!--<br>-->
+<!--        <a href="/myprofile">-->
+<!--            <span></span>-->
+<!--            <span></span>-->
+<!--            <span></span>-->
+<!--            <span></span>-->
+<!--            profile-->
+<!--        </a>-->
+
+<!--        <br>-->
+<!--        <br>-->
+
+<!--    <a href="/logout">-->
+<!--        <span></span>-->
+<!--        <span></span>-->
+<!--        <span></span>-->
+<!--        <span></span>-->
+<!--        Logout-->
+<!--    </a>-->
 
     </form>
 </div>
