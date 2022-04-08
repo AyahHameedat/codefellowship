@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Home Page</title>
+    <link rel="stylesheet" th:href="@{/css/login.css}">
+
+</head>
+
+<style>
+    box-card{
+    margin-top: 1300px;
+    }
+</style>
+<body>
+
+<div class="topnav">
+<nav>
+    <!--    <div class="login-box">-->
+
+    <a href="/">
+        Home
+    </a>
+    <a href="/feed">
+        Posts
+    </a>
+    <a href="/login">
+        Login
+    </a>
+    <a href="/signup">
+        Register
+    </a>
+    <a href="/logout">
+        Logout
+    </a>
+    <!--    </div>-->
+</nav>
+</div>
+
+
+
+        <div class="card">
+            <div class="box-card">
+
+            <img src="../static/images/test.png" width="50%" th:src="@{images/test.png}"/>
+            <div class="container">
+                <h2 th:text="'Hello '+${username} + ' ^_^'"></h2>
+                <h2 th:text="'Full Name: '+ ${firsName} +' '+${lastName}"></h2>
+                <h2 th:text="'Date of Birth '+ ${dateOfBirth} + '!'"></h2>
+                <h2 th:text="'Bio:  '+ ${bio} + ' !'"></h2>
+                </div></div>
+        </div>
+
+
+    <div class="login-box">
+        <h2> Post </h2>
+
+        <form action="/postPage" method="POST">
+
+            <div class="user-box">
+                <textarea name="body"></textarea>
+                <label for="body"> What's on your mind! </label>
+            </div>
+
+            <button type="submit" class="registerbtn"> Share </button>
+
+        </form>
+</div>
+
+
+
+<div class="card">
+    <div class="box-card" th:each="post: ${postList}">
+        <div class="container">
+            <h2 th:text = "${post.body}"></h2>
+            <h2 th:text="${post.createdAt}"></h2>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

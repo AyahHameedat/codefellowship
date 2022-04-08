@@ -1,5 +1,6 @@
 package com.example.lab16.Models;
 
+import lombok.Getter;
 import org.springframework.context.annotation.Bean;
 import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.security.core.GrantedAuthority;
@@ -12,8 +13,11 @@ import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.Collection;
 import java.sql.Date;
+import java.util.List;
+import java.util.Set;
 
 
+@Getter
 @Entity
 public class ApplicationUser implements UserDetails {
 
@@ -36,7 +40,31 @@ public class ApplicationUser implements UserDetails {
 
     private String bio;
 
+//    @OneToMany(mappedBy = "cart")
+//    Set<Item> items;
 
+    @OneToMany(mappedBy = "appUser")
+    Set<PostUsers> post;
+
+
+    @ManyToMany
+    @JoinTable(
+            name = "user_user",
+            joinColumns = {@JoinColumn(name = "from_id")},
+            inverseJoinColumns = {@JoinColumn(name = "to_id")}
+    )
+    public List<ApplicationUser> following;
+
+    @ManyToMany(mappedBy = "following", fetch = FetchType.EAGER)
+    public List<ApplicationUser> followers;
+
+    public List<ApplicationUser> getFollowing() {
+        return following;
+    }
+
+    public List<ApplicationUser> getFollowers() {
+        return followers;
+    }
 
     public ApplicationUser(String password, String username, String firsName, String lastName, Date dateOfBirth, String bio) {
         this.password = password;
@@ -56,6 +84,22 @@ public class ApplicationUser implements UserDetails {
 
     public String getFirsName() {
         return firsName;
+    }
+
+    public String getLastName() {
+        return lastName;
+    }
+
+    public Date getDateOfBirth() {
+        return dateOfBirth;
+    }
+
+    public String getBio() {
+        return bio;
+    }
+
+    public Set<PostUsers> getPost() {
+        return post;
     }
 
     @Override

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Users</title>
+  <link rel="stylesheet" th:href="@{/css/login.css}">
+<!--  <script type="text/javascript" th:src="@{js/file.js}" />-->
+</head>
+
+<script type="text/javascript">
+function Buttontoggle()
+{
+  var t = document.getElementById("123");
+  if(t.innerHTML=="Some Text"){
+      t.innerHTML="Toggled Text";}
+  else{
+      t.innerHTML="Some Text";}
+}
+</script>
+
+<body>
+
+<div class="topnav">
+<nav>
+  <!--  <div class="login-box">-->
+  <a  href="/">
+    Home
+  </a>
+
+  <a href="/myprofile">
+    profile
+  </a>
+
+  <a href="/feed">
+    Posts
+  </a>
+
+  <a href="/login">
+    Login
+  </a>
+
+  <a href="/signup">
+    Register
+  </a>
+
+  <a href="/logout">
+    Logout
+  </a>
+</nav>
+</div>
+
+<div class="card">
+  <div class="box-card" th:each="users: ${usersList}">
+      <img src="../static/images/test.png" width="50%" th:src="@{images/test.png}"/>
+    <div class="container">
+      <h2 th:text = "${users.username}"></h2>
+      <h2 th:text="${users.firsName} +' '+${users.lastName}"></h2>
+      <h2 th:text="${users.dateOfBirth}"></h2>
+      <h2 th:text="${users.bio}"></h2>
+
+      <button type="submit" class="regbtn" ><a th:href="@{'/users/' + ${users.id}}"> Show Info </a></button>
+
+<!--      <td th:each="user : ${user}">-->
+<!--        <a th:if="${username == user.username}" th:href="@{/userList/{user_id}/saveClasses/{classes_id} (user_id=${user.id}, classes_id=${classes.id})}">Attend</a>-->
+<!--      </td>-->
+
+      <button type="submit" onclick="Buttontoggle()" class="regbtn"><a th:href= "@{/follow/{id}(id=${users.id})}"> Follow </a></button>
+      <br/>
+      <a th:href= "@{/followList/{id}(id=${users.id})}"> Followers </a>
+    </div>
+</div>
+</div>
+
+
+  </form>
+</div>
+</body>
+</html>
